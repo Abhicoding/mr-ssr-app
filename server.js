@@ -95,7 +95,7 @@ module.exports =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(__dirname) {
+
 
 var _jsxFileName = '/home/abhishek/Desktop/my-ssr-app/src/server/index.js';
 
@@ -130,7 +130,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var app = (0, _express2.default)();
 var PORT = process.env.PORT || 3000;
 
-app.use(_express2.default.static(_path2.default.join(__dirname, './build')));
+app.use('/build', _express2.default.static(_path2.default.join(__dirname, 'build'), { fallthrough: false }));
 
 app.get('/', function (req, res) {
   var app = _server2.default.renderToString(_react2.default.createElement(_App2.default, _defineProperty({
@@ -154,7 +154,6 @@ app.get('/', function (req, res) {
 app.listen(PORT, function () {
   console.log('server is running on ' + PORT);
 });
-/* WEBPACK VAR INJECTION */}.call(this, "/"))
 
 /***/ }),
 

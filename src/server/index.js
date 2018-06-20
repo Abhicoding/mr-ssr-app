@@ -9,7 +9,7 @@ import App from '../shared/App.js'
 const app = express()
 const PORT = process.env.PORT || 3000
 
-app.use(express.static(path.join(__dirname, './build')))
+app.use('/build', express.static(path.join(__dirname, 'build'), {fallthrough: false}))
 
 app.get('/', (req, res) => {
   let app = ReactDOMServer.renderToString(<App />)

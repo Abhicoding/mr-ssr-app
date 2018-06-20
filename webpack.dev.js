@@ -54,6 +54,9 @@ const browserConfig = {
 const serverConfig = {
   entry: './src/server/index.js',
   target: 'node',
+  node: {
+    __dirname: false
+  },
   externals: [nodeExternals()],
   output: {
     path: __dirname,
